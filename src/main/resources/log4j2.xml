@@ -4,6 +4,8 @@
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n" />
 		</Console>
 		
+		<!-- change the path for the file accordingly on your system -->
+		
 		<RollingFile name="AppFile"
 			fileName="/Users/b0096703/app/online/slf4j/logs/slf4j-app.log"
 			filePattern="/Users/b0096703/app/online/slf4j/logs/slf4j-app-%d{yyyy-MM-dd}-%i.log">
