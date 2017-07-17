@@ -7,6 +7,13 @@ public class Contact {
     private String email;
     private String address;
     private String telephone;
+    private String sport;
+	public String getSport() {
+		return sport;
+	}
+	public void setSport(String sport) {
+		this.sport = sport;
+	}
 	public int getId() {
 		return id;
 	}
@@ -40,7 +47,7 @@ public class Contact {
 	@Override
 	public String toString() {
 		return "Contact [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", telephone="
-				+ telephone + "]";
+				+ telephone + ", sport=" + sport + "]";
 	}
 	
 	

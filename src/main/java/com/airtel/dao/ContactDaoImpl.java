@@ -23,15 +23,15 @@ public class ContactDaoImpl implements ContactDao {
 		if (contact.getId() > 0) {
 	        // update
 	        String sql = "UPDATE contact SET name=?, email=?, address=?, "
-	                    + "telephone=? WHERE contact_id=?";
+	                    + "telephone=?, fav_sport=? WHERE contact_id=?";
 	        jdbcTemplate.update(sql, contact.getName(), contact.getEmail(),
-	                contact.getAddress(), contact.getTelephone(), contact.getId());
+	                contact.getAddress(), contact.getTelephone(), contact.getSport(), contact.getId());
 	    } else {
 	        // insert
-	        String sql = "INSERT INTO contact (name, email, address, telephone)"
-	                    + " VALUES (?, ?, ?, ?)";
+	        String sql = "INSERT INTO contact (name, email, address, telephone,fav_sport)"
+	                    + " VALUES (?, ?, ?, ?, ?)";
 	        jdbcTemplate.update(sql, contact.getName(), contact.getEmail(),
-	                contact.getAddress(), contact.getTelephone());
+	                contact.getAddress(), contact.getTelephone(),contact.getSport());
 	    }
     }
  
@@ -49,7 +49,7 @@ public class ContactDaoImpl implements ContactDao {
 	 */
     @Override
     public List<Contact> list() {
-    	String query = "SELECT contact_id,name,email,address,telephone FROM contact";
+    	String query = "SELECT contact_id,name,email,address,telephone,fav_sport FROM contact";
         List<Contact> contacts = jdbcTemplate.query(query, new ContactRowMapper());
         return contacts;
     }
@@ -59,7 +59,7 @@ public class ContactDaoImpl implements ContactDao {
 	 */
     @Override
     public Contact get(int contactId) {
-    	String query = "SELECT contact_id,name,email,address,telephone FROM contact WHERE contact_id=?";
+    	String query = "SELECT contact_id,name,email,address,telephone,fav_sport FROM contact WHERE contact_id=?";
     	Contact contact = jdbcTemplate.queryForObject(query, new Object[]{contactId}, new ContactRowMapper());
     	return contact;
     }

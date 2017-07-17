@@ -17,6 +17,7 @@
                 <th>Email</th>
                 <th>Address</th>
                 <th>Telephone</th>
+                <th>Fav_Sport</th>
                 <th>Action</th>
                  
                 <c:forEach var="contact" items="${listContact}" varStatus="status">
@@ -26,6 +27,7 @@
                     <td>${contact.email}</td>
                     <td>${contact.address}</td>
                     <td>${contact.telephone}</td>
+                    <td>${contact.sport}</td>
                     <td>
                         <a href="<c:url value = "/form/editContact?id=${contact.id}"/>">Edit</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;

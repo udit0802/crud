@@ -2,4 +2,5 @@
 /Users/b0096703/Documents/workspace-sts-3.8.4.RELEASE/crud/src/main/java/com/airtel/row/mapper/ContactRowMapper.java
 /Users/b0096703/Documents/workspace-sts-3.8.4.RELEASE/crud/src/main/java/com/airtel/model/Contact.java
 /Users/b0096703/Documents/workspace-sts-3.8.4.RELEASE/crud/src/main/java/com/airtel/controllers/FormController.java
+/Users/b0096703/Documents/workspace-sts-3.8.4.RELEASE/crud/src/main/java/com/airtel/controllers/TrialController.java
 /Users/b0096703/Documents/workspace-sts-3.8.4.RELEASE/crud/src/main/java/com/airtel/dao/ContactDaoImpl.java

@@ -32,6 +32,11 @@
                 <td><form:input path="telephone" /></td>
             </tr>
             <tr>
+                <td>Choose the sport you like:</td>
+                <td><form:radiobuttons path="sport" items="${sports}" /></td>
+            </tr>
+            
+            <tr>
                 <td colspan="2" align="center"><input type="submit" value="Save"></td>
             </tr>
         </table>

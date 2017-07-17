@@ -1,4 +1,5 @@
 com/airtel/model/Contact.class
+com/airtel/controllers/TrialController.class
 com/airtel/controllers/FormController.class
 com/airtel/dao/ContactDao.class
 com/airtel/controllers/FormController$1.class

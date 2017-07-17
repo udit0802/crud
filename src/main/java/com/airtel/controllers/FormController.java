@@ -1,6 +1,7 @@
 package com.airtel.controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -8,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,10 +45,19 @@ public class FormController {
 	    return model;
 	}
 	
+	private void initFavSportList(ModelAndView model){
+		List<String> favSportList = new ArrayList<String>();
+		favSportList.add("Cricket");
+		favSportList.add("Football");
+		favSportList.add("Badminton");
+		model.addObject("sports", favSportList);
+	}
+	
 	@RequestMapping(value = "/newContact", method = RequestMethod.GET)
 	public ModelAndView newContact(ModelAndView model) {
 	    Contact newContact = new Contact();
 	    model.addObject("contact", newContact);
+	    initFavSportList(model);
 	    model.setViewName("ContactForm");
 	    return model;
 	}
@@ -72,7 +81,7 @@ public class FormController {
 	    Contact contact = contactDAO.get(id);
 	    ModelAndView model = new ModelAndView("ContactForm");
 	    model.addObject("contact", contact);
-	 
+	    initFavSportList(model);
 	    return model;
 	}
 }
